@@ -66,3 +66,14 @@
     // Chart/Graph
     let chart_1 = selectedSheet.addChart(ExcelScript.ChartType.xyscatterLines, selectedSheet.getRange("A1:B11"));
 
+	// Solutions
+	// Set range F5:G6 on selectedSheet
+	selectedSheet.getRange("F5:G6").setFormulas([["rise over run","=(B3-B2)/(A3-A2)"],["solve for b","=m*A2+b"]]);
+	// Set width of column(s) at range F:F on selectedSheet to 60.6
+	selectedSheet.getRange("F:F").getFormat().setColumnWidth(60.6);
+	// Set font bold to true for range F2:F6 on selectedSheet
+	selectedSheet.getRange("F2:F6").getFormat().getFont().setBold(true);
+	// Set fill color to #E8E8E8 for range F2:F6 on selectedSheet
+	selectedSheet.getRange("F2:F6").getFormat().getFill().setColor("#E8E8E8");
+
+
