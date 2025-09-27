@@ -1,0 +1,43 @@
+// Line Excel Macro/Script 365 Office Scripts ( TypeScript )
+// Office Scripts in Microsoft 365 are written in TypeScript, 
+//  which is a superset of JavaScript. When you save an Office Script, 
+// it is stored with the file extension .osts. 
+// These files are typically found in your OneDrive, within the /Documents/Office Scripts/ folder. 
+
+    let selectedSheet = workbook.getActiveWorksheet();
+
+    let m = 1;
+    let b = 1;
+
+
+    for (let iColumn = 0; iColumn <= 2; iColumn++) {
+        for (let iRow = 0; iRow <= 10; iRow++) {
+            let cellFormula2: string = selectedSheet.getCell(iRow, iColumn).getFormula();
+
+            if (cellFormula2.length > 0)
+                cellFormula2 = cellFormula2.replace("{", "");
+            if (cellFormula2.length > 0)
+                cellFormula2 = cellFormula2.replace("}", "");
+
+            if (iRow==0 && iColumn==0) {
+                selectedSheet.getCell(iRow, iColumn).setValue( "X");
+            }
+            else if (iRow == 0 && iColumn == 1) {
+                selectedSheet.getCell(iRow, iColumn).setValue("Y");
+            }
+            else if (iRow > 0 && iColumn == 0) {  
+                selectedSheet.getCell(iRow, iColumn).setValue(iRow);
+            }
+            else if (iRow > 0 && iColumn == 1) 
+            {
+                selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
+            }
+            else  {
+
+                let sCellRow = String.fromCharCode("A".charCodeAt(0)+iColumn);
+
+                selectedSheet.getCell(iRow, iColumn).setValue(sCellRow+(iRow+1) );
+            }           
+        }
+
+    }
