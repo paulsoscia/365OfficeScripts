@@ -41,7 +41,7 @@
             else if (iRow > 0 && iColumn == 1) {
                 //selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
                 //selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
-                selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X + iColumn + "+b");
+                selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X + iColumn + (iRow + 1) + "+b");
             }
             else {
 
