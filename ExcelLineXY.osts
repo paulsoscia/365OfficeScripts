@@ -52,6 +52,17 @@
 
     }
 
+    // Format
+	// Set font bold to true for range A1:B1 on selectedSheet
+	selectedSheet.getRange("A1:B1").getFormat().getFont().setBold(true);
+	// Set horizontal alignment to ExcelScript.HorizontalAlignment.center for range A1:B1 on selectedSheet
+	selectedSheet.getRange("A1:B1").getFormat().setHorizontalAlignment(ExcelScript.HorizontalAlignment.center);
+	//selectedSheet.getRange("A1:B1").getFormat().setIndentLevel(0);
+	// Indent set to 0 for range A1:B1 on selectedSheet
+	//selectedSheet.getRange("A1:B1").getFormat().setIndentLevel(0);
+	// Set fill color to #E8E8E8 for range A1:B1 on selectedSheet
+	selectedSheet.getRange("A1:B1").getFormat().getFill().setColor("#E8E8E8");
+
     // Chart/Graph
     let chart_1 = selectedSheet.addChart(ExcelScript.ChartType.xyscatterLines, selectedSheet.getRange("A1:B11"));
 
