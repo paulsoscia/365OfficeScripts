@@ -45,7 +45,7 @@
                 selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X  + (iRow + 1) + "+b");
             }
             else {
-                let sCellRow = String.fromCharCode("A".charCodeAt(0) + (iRow+1));
+                let sCellRow = String.fromCharCode("A".charCodeAt(0) + (iColumn )) + (iRow+1);
                 selectedSheet.getCell(iRow, iColumn).setValue(sCellRow );
             }
         }
