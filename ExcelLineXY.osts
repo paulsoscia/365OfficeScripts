@@ -28,6 +28,7 @@
 
             if (iRow==0 && iColumn==0) {
                 selectedSheet.getCell(iRow, iColumn).setValue( "X");
+				let X = String.fromCharCode("A".charCodeAt(0)+iColumn);
             }
             else if (iRow == 0 && iColumn == 1) {
                 selectedSheet.getCell(iRow, iColumn).setValue("Y");
@@ -37,7 +38,9 @@
             }
             else if (iRow > 0 && iColumn == 1) 
             {
-                selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
+                //selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
+                //selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
+                selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X +iColumn "+b");
             }
             else  {
 
