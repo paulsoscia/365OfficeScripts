@@ -7,8 +7,15 @@
     let selectedSheet = workbook.getActiveWorksheet();
 
     let m = 1;
-    let b = 1;
+    let b = 2;
 
+	selectedSheet.getRange("F2:F3").setValues([["m="],["b="]]);
+	// Define Name m on workbook range G2 on selectedSheet
+	workbook.addNamedItem("m", selectedSheet.getRange("G2"), "");
+	// Define Name b on workbook range G3 on selectedSheet
+	workbook.addNamedItem("b", selectedSheet.getRange("G3"), "");
+	selectedSheet.selectedSheet.getRange("G2").setValue(m );
+	selectedSheet.selectedSheet.getRange("G3").setValue(b );
 
     for (let iColumn = 0; iColumn <= 2; iColumn++) {
         for (let iRow = 0; iRow <= 10; iRow++) {
@@ -35,15 +42,11 @@
             else  {
 
                 let sCellRow = String.fromCharCode("A".charCodeAt(0)+iColumn);
-
                 selectedSheet.getCell(iRow, iColumn).setValue(sCellRow+(iRow+1) );
             }           
         }
 
     }
 
-	selectedSheet.getRange("F2:F3").setValues([["m="],["b="]]);
-	// Define Name m on workbook range G2 on selectedSheet
-	workbook.addNamedItem("m", selectedSheet.getRange("G2"), "");
-	// Define Name b on workbook range G3 on selectedSheet
-	workbook.addNamedItem("b", selectedSheet.getRange("G3"), "");
+    // Chart/Graph
+    let chart_1 = selectedSheet.addChart(ExcelScript.ChartType.xyscatterLines, selectedSheet.getRange("A1:B11"));
