@@ -42,11 +42,11 @@
             else if (iRow > 0 && iColumn == 1) {
                 //selectedSheet.getCell(iRow, iColumn).setValue(m*iRow+b);
                 // Y = mx + b
-                selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X + iColumn + (iRow + 1) + "+b");
+                selectedSheet.getCell(iRow, iColumn).setFormula("=m*" + X  + (iRow + 1) + "+b");
             }
             else {
-                let sCellRow = String.fromCharCode("A".charCodeAt(0) + iRow);
-                selectedSheet.getCell(iRow, iColumn).setValue(sCellRow + (iRow + 1));
+                let sCellRow = String.fromCharCode("A".charCodeAt(0) + (iRow+1));
+                selectedSheet.getCell(iRow, iColumn).setValue(sCellRow );
             }
         }
 
