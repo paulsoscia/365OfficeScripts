@@ -14,8 +14,8 @@
 	workbook.addNamedItem("m", selectedSheet.getRange("G2"), "");
 	// Define Name b on workbook range G3 on selectedSheet
 	workbook.addNamedItem("b", selectedSheet.getRange("G3"), "");
-	selectedSheet.selectedSheet.getRange("G2").setValue(m );
-	selectedSheet.selectedSheet.getRange("G3").setValue(b );
+	selectedSheet.getRange("G2").setValue(m );
+	selectedSheet.getRange("G3").setValue(b );
 
     for (let iColumn = 0; iColumn <= 2; iColumn++) {
         for (let iRow = 0; iRow <= 10; iRow++) {
