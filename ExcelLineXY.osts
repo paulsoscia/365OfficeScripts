@@ -41,3 +41,9 @@
         }
 
     }
+
+	selectedSheet.getRange("F2:F3").setValues([["m="],["b="]]);
+	// Define Name m on workbook range G2 on selectedSheet
+	workbook.addNamedItem("m", selectedSheet.getRange("G2"), "");
+	// Define Name b on workbook range G3 on selectedSheet
+	workbook.addNamedItem("b", selectedSheet.getRange("G3"), "");
